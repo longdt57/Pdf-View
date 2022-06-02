@@ -5,7 +5,10 @@ import android.graphics.pdf.PdfRenderer
 import android.net.Uri
 import android.util.AttributeSet
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import lee.module.pdfview.R
 
 class PdfView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -13,6 +16,9 @@ class PdfView @JvmOverloads constructor(
 
     init {
         layoutManager = PreloadLayoutManager(context)
+        addItemDecoration(DividerItemDecoration(context, VERTICAL).apply {
+            setDrawable(ContextCompat.getDrawable(context, R.drawable.pv_divider_vertical_16)!!)
+        })
     }
 
     fun setPdfRenderer(renderer: PdfRenderer) {
