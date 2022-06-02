@@ -1,4 +1,5 @@
 # Pdf-View
+[![Generic badge](https://img.shields.io/badge/Version-1.0.0-<green>.svg)](https://github.com/longdt57/Pdf-View/releases/latest)
 
 ## ScreenShots
 <img src="screenshots/screenshot1.png" width="540" height="960" />
@@ -15,7 +16,6 @@ repositories {
 ### [module]/build.gradle
 
 ```
-version latest: 1.0.0-alpha3
 
 dependencies {
   implementation 'com.github.longdt57:Pdf-View:{version}'
