@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         getPdf = registerForActivityResult(ActivityResultContracts.GetContent()) {
-            startPdfActivity(it)
+            it?.let { startPdfActivity(it) }
         }
 
         findViewById<View>(R.id.btnOpenLocalFile).setOnClickListener {
@@ -80,7 +80,8 @@ class MainActivity : AppCompatActivity() {
     private fun startPdfActivity(uri: Uri) {
         Intent(Intent.ACTION_VIEW).apply {
             val fileExtension = MimeTypeMap.getFileExtensionFromUrl(uri.toString())
-            val type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(fileExtension.toLowerCase())
+            val type = MimeTypeMap.getSingleton()
+                .getMimeTypeFromExtension(fileExtension.toLowerCase())
             setDataAndType(uri, type)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
 

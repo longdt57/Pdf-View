@@ -4,9 +4,7 @@ import android.graphics.Bitmap
 import android.graphics.pdf.PdfRenderer
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
-import lee.module.pdfview.R
 import lee.module.pdfview.databinding.PvPdfItemBinding
 
 class PdfViewAdapter(
@@ -55,10 +53,6 @@ class PdfViewAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(bitmap: Bitmap) {
-            binding.root.updateLayoutParams {
-                height =
-                    getScreenHeight() - itemView.resources.getDimensionPixelSize(R.dimen.pv_bottom_spacing)
-            }
             binding.ivContent.setImageBitmap(bitmap)
         }
     }
