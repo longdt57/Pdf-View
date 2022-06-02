@@ -15,7 +15,7 @@ repositories {
 ### [module]/build.gradle
 
 ```
-version latest: 1.0.0-alpha2
+version latest: 1.0.0-alpha3
 
 dependencies {
   implementation 'com.github.longdt57:Pdf-View:{version}'
